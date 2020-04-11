@@ -13,6 +13,7 @@ code {
 :root {
   --primary-color: #FF4757;
   --black-color: #171717;
+  --grey-color: #E5E7EA;
 }
 
 input {

@@ -1,0 +1,28 @@
+.s2Div {
+    width: 275px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.s2-btn {
+    background-color: var(--primary-color);
+    font-size: 15px;
+    color: #fff;
+}
+
+.s2-btn:hover,.s2-btn:focus,.s2-btn:active {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.s2-bkbtn {
+    background-color: var(--grey-color);
+    font-size: 15px;
+    color: var(--black-color);
+}
+
+.s2-bkbtn:hover,.s2-bkbtn:focus,.s2-bkbtn:active {
+    background-color: var(--grey-color);
+    font-size: 15px;
+    color: var(--black-color);
+}
