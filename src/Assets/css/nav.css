@@ -1,0 +1,9 @@
+.nav__div {
+    padding:24px 24px 18px 24px;
+}
+
+@media (max-width:435px) {
+    .nav__div {
+        padding-top:46px;
+    }
+}

@@ -1,12 +1,14 @@
 import * as actionTypes from '../actionTypes/doctor'
 
-import { success ,errorMsg} from '../components/message'
+import history from "../history"
+import { success ,errorMsg} from '../components/libs/message'
 
 export function addDoctor(data) {
   return (dispatch) => {
     try {
         dispatch(actionTypes.addDoctor(data))
-        success('added sucessfulyy')
+        success('added sucessfully')
+        history.push('/otp')
     }catch(e){
       errorMsg(e)
     }
