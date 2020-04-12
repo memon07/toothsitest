@@ -21,7 +21,6 @@ function AllSeason (props) {
           <div className="col-12 p-0">
             <Nav/>
           </div>
-
           {/*  */}
           <div className="col-lg-6 col-md-6 col-xs-12 col-12">
             <div className="col-12 padding24">
@@ -44,7 +43,7 @@ function AllSeason (props) {
 
               {
                 patients.map(item => (
-                  <div className="row patient__div p-0">
+                  <div className="row patient__div p-0" key={item.id}>
                     <div className="col-2 p-0">
                       <img src={PatientsImg} height="40px" width="40px" alt="patient"/>
                     </div>

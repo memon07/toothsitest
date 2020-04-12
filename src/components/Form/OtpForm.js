@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { Form, Input, Button } from 'antd'
-import { addDoctor } from '../../actions/doctor'
+import { addOtp } from '../../actions/otp'
 import '../../Assets/css/otpForm.css'
 
 class OtpForm extends Component {
@@ -19,8 +19,8 @@ class OtpForm extends Component {
             'otp' : values.otp
         }
         console.log(data)
-        const { addDoctor } = this.props;
-        addDoctor(data);
+        const { addOtp } = this.props;
+        addOtp(data);
       }
     });
   };
@@ -36,7 +36,7 @@ class OtpForm extends Component {
       <>
         <Form onSubmit={this.handleSubmit} className="otpDiv">
               <FormItem style={{marginRight:24}}>
-                {getFieldDecorator('opt', {
+                {getFieldDecorator('otp', {
                   rules: [
                     {required: true, message: 'Please provide otp number.'},
                     {max:4}
@@ -60,7 +60,7 @@ class OtpForm extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addDoctor: (data) => dispatch(addDoctor(data))
+    addOtp: (data) => dispatch(addOtp(data))
   };
 };
 

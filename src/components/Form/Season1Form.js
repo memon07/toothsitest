@@ -82,7 +82,7 @@ class Season1Form extends Component {
                         initalValue:false,
                         valuePropName: "checked",
                         rules: [
-                            {required: true},
+                            {required: false},
                         ],
                         })(
                         <><Checkbox onChange={this.handleCkChange.bind(this)}/><span className="s1-notification">Allow notification</span></>

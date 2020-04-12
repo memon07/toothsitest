@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { Form, Input, Button , Select } from 'antd'
+import history from '../../history'
 import { updatePatient } from '../../actions/patient'
 import '../../Assets/css/Season2Form.css'
 
@@ -33,11 +34,15 @@ class Season2Form extends Component {
     });
   };
 
-    handleCkChange = e => {
-      this.props.form.setFieldsValue({
-        city: e
-       });
-    }
+  handleCkChange = e => {
+    this.props.form.setFieldsValue({
+      city: e
+      });
+  }
+
+  backBtn = () => {
+    history.push('/season1')
+  }
 
 
 
@@ -85,7 +90,7 @@ class Season2Form extends Component {
               </FormItem>
 
               <div className="">
-                <Button size='large' className='s2-bkbtn'>Back</Button>
+                <Button size='large' onClick={this.backBtn.bind(this)} className='s2-bkbtn'>Back</Button>
                 <Button size='large' style={{marginRight:24}} className='s2-btn float-right'  htmlType="submit">Finish</Button>
               </div>
         </Form>

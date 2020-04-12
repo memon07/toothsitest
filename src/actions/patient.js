@@ -9,7 +9,7 @@ export function addPatient(data) {
         console.log('......',data)
         dispatch(actionTypes.addPatient(data))
         success('added sucessfully')
-        // history.push('/otp')
+        history.push('/season2')
     }catch(e){
       errorMsg(e)
     }
@@ -22,7 +22,7 @@ export function updatePatient(data) {
         console.log('......',data)
         dispatch(actionTypes.updatePatient(data))
         success('added sucessfully')
-        // history.push('/otp')
+        history.push('/allseason')
     }catch(e){
       errorMsg(e)
     }

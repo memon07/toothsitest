@@ -13,7 +13,7 @@ import storage from 'redux-persist/lib/storage'
 const persistConfig = {
   key: 'primary',
   storage,
-  whitelist: ['doctor','patient'],
+  whitelist: ['doctor','patient','otp'],
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
