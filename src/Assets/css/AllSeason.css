@@ -16,7 +16,8 @@
     width: 275px;
     margin-left: auto;
     margin-right: auto;
-    font-weight: 400;   
+    font-weight: 400;  
+    padding-bottom: 36px; 
 }
 
 .all-btn {
@@ -31,8 +32,6 @@
     color: #fff;
 }
 
-
-
 .allPHeader__p {
     font-size: 20px;
     margin: 0;
@@ -41,10 +40,84 @@
     padding-bottom: 34px;
 }
 
+.patient__div{
+    width: 310px;
+    margin: auto;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--grey-color);
+}
+
+.p__name {
+    font-size: 14px;
+    margin: 0;
+    color: var(--black-color);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.p__date {
+    font-size: 12px;
+    margin: 0;
+    color: var(--black-color);
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.p__scheduled {
+    font-size: 10px;
+    margin: 0;
+    color: var(--primary-color);
+    font-weight: 400;
+    line-height: 1.8;
+    padding-bottom: 8px;
+}
+
+.p__phoneImg {
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+
+.pAllSHeader__p {
+    font-size: 11px;
+    margin: 0;
+    color: var(--black-color);
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: 1px;
+}
+
+.pAllSHeader__div {
+    padding: 14px 24px;
+    width: 360px;
+    margin-bottom: 12px;
+    background-color: var(--grey-color);
+    margin-top: 112px;
+}
+
+.patientAll__div{
+    width: 310px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--grey-color);
+}
 
 
 @media (max-width:425px) {
     .welHITWHeader__p {
         padding-top: 65px;
     }
+
+    .p__phoneImg {
+        right: 25px;
+    }
+
+    .patientAll__div{
+        margin: auto;
+    } 
+
+    .pAllSHeader__div {
+        width: unset;
+        margin-top: 0px;
+    }
+
 }

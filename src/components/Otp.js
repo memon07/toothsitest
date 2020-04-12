@@ -10,7 +10,7 @@ import OtpForm from '../components/Form/OtpForm'
 
 function Otp (props) {
 
-  let doctorNo = props ? props.doctor.doctor.phonenumber : ''
+  let doctorNo = props.doctor ? props.doctor.doctor.phonenumber : 9912121232
 
   return (
     <>
