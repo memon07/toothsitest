@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { Form, Input, Button , Select } from 'antd'
-import { addDoctor } from '../../actions/doctor'
+import { updatePatient } from '../../actions/patient'
 import '../../Assets/css/Season2Form.css'
 
 const { Option } = Select;
+
 
 class Season2Form extends Component {
   constructor(props) {
@@ -15,15 +16,19 @@ class Season2Form extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    let latestArrId = this.props.patient?this.props.patient.arr[this.props.patient.arr.length -1].id:1;
     this.props.form.validateFields((err, values) => {
       if (!err) {
         let data = {
+            'id' : latestArrId,
             'email' : values.email,
             'city' : values.city
         }
+
+        console.log(this.props.patient.arr[this.props.patient.arr.length -1].id)
         console.log(data)
-        // const { addDoctor } = this.props;
-        // addDoctor(data);
+        const { updatePatient } = this.props;
+        updatePatient(data);
       }
     });
   };
@@ -91,11 +96,17 @@ class Season2Form extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addDoctor: (data) => dispatch(addDoctor(data))
+    updatePatient: (data) => dispatch(updatePatient(data))
   };
 };
 
+const mapStateToProps = state => {
+  return {
+    patient : state.patient 
+  }
+}
+
 const WrappedSeason2Form = Form.create()(Season2Form);
-const ConnectedSeason2 = connect(null, mapDispatchToProps)(WrappedSeason2Form)
+const ConnectedSeason2 = connect(mapStateToProps, mapDispatchToProps)(WrappedSeason2Form)
 
 export default ConnectedSeason2

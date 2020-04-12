@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { Form, Input, Button } from 'antd'
+import uuid from "uuid/v4";
 import { addDoctor } from '../../actions/doctor'
 import '../../Assets/css/loginForm.css'
 
@@ -16,6 +17,7 @@ class LoginForm extends Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         let data = {
+            'id': uuid(),
             'phonenumber' : values.phonenumber
         }
         console.log(data)

@@ -17,6 +17,7 @@
 
 .s1-flex__div {
     display: flex;
+    justify-content: space-between;
 }
 
 .s1-notification {

@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { Form, Input, Button ,Checkbox } from 'antd'
-import { addDoctor } from '../../actions/doctor'
+import uuid from "uuid/v4";
+import { addPatient } from '../../actions/patient'
 import '../../Assets/css/Season1Form.css'
 
 
@@ -17,13 +18,14 @@ class Season1Form extends Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         let data = {
+            'id': uuid(),
             'phonenumber' : values.phonenumber,
             'patientname' : values.patientname,
             'notification' : values.notification
         }
         console.log(data)
-        // const { addDoctor } = this.props;
-        // addDoctor(data);
+        const { addPatient } = this.props;
+        addPatient(data);
       }
     });
   };
@@ -74,8 +76,8 @@ class Season1Form extends Component {
                     )}
               </FormItem>
 
-              <div className="s1-flex__div">
-                <FormItem style={{marginRight:24}}>
+              <div className="s1-flex__div"style={{marginRight:24}}>
+                <FormItem>
                         {getFieldDecorator('notification', {
                         initalValue:false,
                         valuePropName: "checked",
@@ -86,7 +88,7 @@ class Season1Form extends Component {
                         <><Checkbox onChange={this.handleCkChange.bind(this)}/><span className="s1-notification">Allow notification</span></>
                         )}
                 </FormItem>
-                <Button size='large' className='s1-btn'  htmlType="submit">Send OTP</Button>
+                <Button size='large' className='s1-btn pull-right'  htmlType="submit">Next</Button>
               </div>
         </Form>
       </>
@@ -96,7 +98,7 @@ class Season1Form extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addDoctor: (data) => dispatch(addDoctor(data))
+    addPatient: (data) => dispatch(addPatient(data))
   };
 };
 
