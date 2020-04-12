@@ -12,8 +12,12 @@ export function addOtp(url,data) {
           if(response.data){
             console.log('data in action',response.data)
             dispatch(actionTypes.addOtp(response.data))
-            success('added sucessfully')
-            // history.push('/welcome')
+            if (response.data === 'true') {
+              success('otp added sucessfully')
+              history.push('/welcome')
+            }else {
+              errorMsg('wrong otp')
+            }
 
           }
         })

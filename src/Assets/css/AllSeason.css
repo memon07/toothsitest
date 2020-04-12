@@ -101,6 +101,28 @@
     border-bottom: 1px solid var(--grey-color);
 }
 
+.p__newSession {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    background-color: var(--primary-color);
+    color: #fff;
+    width: 177px;
+    height: 48px;
+}
+
+.p__newSession:hover,.p__newSession:focus,.p__newSession:active {
+    background-color: var(--primary-color);
+    color: #fff;
+
+}
+
+.p__newSessiontxt{
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
 
 @media (max-width:425px) {
     .welHITWHeader__p {
@@ -118,6 +140,12 @@
     .pAllSHeader__div {
         width: unset;
         margin-top: 0px;
+    }
+
+    .p__newSession {
+        top: unset;
+        bottom: -500px;
+        z-index: 1;
     }
 
 }

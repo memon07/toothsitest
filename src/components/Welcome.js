@@ -5,11 +5,16 @@ import DocAsset from '../../src/Assets/Images/doc-assets.svg'
 import BookSession from '../../src/Assets/Images/book_session.png'
 
 import { Button } from 'antd'
+import history from '../history'
 
 //components
 import Nav from './libs/nav'
 
 function Welcome (props) {
+
+    const bkSession = () => {
+        history.push('/season1')
+    }
 
   return (
     <>
@@ -24,7 +29,7 @@ function Welcome (props) {
             <div className="col-12 padding24 text-center">
                 <img src={DocAsset} width="133px" height="193px" alt="doc-asset"/>
                 <p className="welBody__p">Look like you are yet to refer someone for smile correction</p>
-                <Button size='large' className='wel-btn'  htmlType="submit">Book a session for patient</Button>
+                <Button size='large' onClick={bkSession} className='wel-btn'  htmlType="submit">Book a session for patient</Button>
             </div>
           </div>
           <div className="col-lg-6 col-md-6 col-xs-12 col-12 p-0">

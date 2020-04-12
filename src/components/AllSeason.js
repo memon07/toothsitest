@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import '../Assets/css/AllSeason.css'
 import PatientsImg from '../../src/Assets/Images/patients.svg'
 import PhoneImg from '../../src/Assets/Images/Phone.svg'
+import history from '../history'
 
 import { Button } from 'antd'
 
@@ -15,11 +16,18 @@ function AllSeason (props) {
   let patients = props.patient ? props.patient.arr : []
   console.log(patients)
 
+  const newSessionbtn = () => {
+    history.push('/season1')
+  }
+
   return (
     <>
         <div className="row m-0">
           <div className="col-12 p-0">
             <Nav/>
+          <Button className="p__newSession" size="large" onClick={newSessionbtn}>
+            <span className="p__newSessiontxt">Book a new Session</span>
+            </Button>
           </div>
           {/*  */}
           <div className="col-lg-6 col-md-6 col-xs-12 col-12">
