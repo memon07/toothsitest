@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 import '../Assets/css/Welcome.css'
 import DocAsset from '../../src/Assets/Images/doc-assets.svg'
@@ -9,11 +10,21 @@ import history from '../history'
 
 //components
 import Nav from './libs/nav'
+import Invalid from './libs/Invalid'
 
 function Welcome (props) {
 
+    let isOtp = props.otp ? props.otp.otp : false
+
     const bkSession = () => {
         history.push('/season1')
+    }
+
+
+    if(!isOtp || isOtp == null || isOtp == undefined) {
+        return <>
+            <Invalid/>
+        </>
     }
 
   return (
@@ -94,4 +105,10 @@ function Welcome (props) {
   )
 }
 
-export default Welcome
+const mapStateToProps = state => {
+    return {
+        otp : state.otp
+    }
+}
+
+export default connect(mapStateToProps)(Welcome)

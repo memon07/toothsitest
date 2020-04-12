@@ -1,0 +1,10 @@
+.invalid__btn {
+    background-color: var(--primary-color);
+    font-size: 15px;
+    color: #fff;
+}
+
+.invalid__btn:hover,.invalid__btn:focus,.invalid__btn:active {
+    background-color: var(--primary-color);
+    color: #fff;
+}
