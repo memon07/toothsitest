@@ -13,14 +13,21 @@ class OtpForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+
+    let docId = this.props.doctor ? this.props.doctor.doctor.id : 1
+    let phoneNumber = this.props.doctor ? this.props.doctor.doctor.phonenumber : 9392312321
+
     this.props.form.validateFields((err, values) => {
       if (!err) {
         let data = {
+            'id' : docId,
+            'phonenumber' : phoneNumber,
             'otp' : values.otp
         }
         console.log(data)
         const { addOtp } = this.props;
-        addOtp(data);
+        let url = 'http://localhost:8000/api/otp'
+        addOtp(url,data);
       }
     });
   };
@@ -60,11 +67,17 @@ class OtpForm extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addOtp: (data) => dispatch(addOtp(data))
+    addOtp: (url,data) => dispatch(addOtp(url,data))
   };
 };
 
+const mapStateToProps = state => {
+  return {
+    doctor : state.doctor
+  }
+}
+
 const WrappedOtpForm = Form.create()(OtpForm);
-const ConnectedOtp = connect(null, mapDispatchToProps)(WrappedOtpForm)
+const ConnectedOtp = connect(mapStateToProps, mapDispatchToProps)(WrappedOtpForm)
 
 export default ConnectedOtp

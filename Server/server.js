@@ -4,9 +4,6 @@ var morgan = require('morgan');
 var cors = require('cors');
 var bodyParser = require('body-parser');    
 
-var config = require('./config')
-config();
-
 
 // configuration
 app.use(express.static(__dirname + '/public'));                 
@@ -15,9 +12,9 @@ app.use(cors());
 app.use(morgan('dev'));                                         
 app.use(bodyParser.urlencoded({ 'extended': 'true' }));            
 app.use(bodyParser.json());                                   
-app.use(bodyParser.json({ type: 'application/vnd.api+json' })); 
+app.use(bodyParser.json({ type: 'application/json' })); 
 
-require('./routes/user.js')(app);
+require('./routes/otp.js')(app);
 
 app.get('/', (req,res)=>{
     res.json('toothsi api loaded sucessfully')
