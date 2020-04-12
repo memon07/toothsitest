@@ -21,7 +21,7 @@ function Welcome (props) {
     }
 
 
-    if(!isOtp || isOtp == null || isOtp == undefined) {
+    if(!isOtp || isOtp === null || isOtp === undefined) {
         return <>
             <Invalid/>
         </>

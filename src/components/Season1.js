@@ -1,12 +1,22 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 import '../Assets/css/Season1.css'
 
 //components
 import Nav from './libs/nav'
 import Season1Form from '../components/Form/Season1Form'
+import Invalid from './libs/Invalid'
 
 function Season1 (props) {
+
+  let isOtp = props.otp ? props.otp.otp : false
+
+    if(!isOtp || isOtp === null || isOtp === undefined) {
+        return <>
+            <Invalid/>
+        </>
+    }
 
   return (
     <>
@@ -26,4 +36,10 @@ function Season1 (props) {
   )
 }
 
-export default Season1
+const mapStateToProps = state => {
+  return {
+      otp : state.otp
+  }
+}
+
+export default connect(mapStateToProps)(Season1)

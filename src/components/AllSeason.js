@@ -10,15 +10,23 @@ import { Button } from 'antd'
 
 //components
 import Nav from './libs/nav'
+import Invalid from './libs/Invalid'
 
 function AllSeason (props) {
 
   let patients = props.patient ? props.patient.arr : []
-  console.log(patients)
 
   const newSessionbtn = () => {
     history.push('/season1')
   }
+
+  let isOtp = props.otp ? props.otp.otp : false
+
+    if(!isOtp || isOtp === null || isOtp === undefined) {
+        return <>
+            <Invalid/>
+        </>
+    }
 
   return (
     <>
@@ -117,7 +125,8 @@ function AllSeason (props) {
 
 const mapStateToProps = state => {
   return {
-    patient: state.patient
+    patient: state.patient,
+    otp: state.otp
   }
 }
 
