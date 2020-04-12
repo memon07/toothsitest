@@ -143,9 +143,10 @@
     }
 
     .p__newSession {
-        top: unset;
-        bottom: -500px;
         z-index: 1;
+        top: 500px;
+        z-index: 1;
+        position: fixed;
     }
 
 }
