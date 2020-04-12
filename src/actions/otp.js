@@ -7,12 +7,11 @@ import { success ,errorMsg} from '../components/libs/message'
 export function addOtp(url,data) {
   return (dispatch) => {
     try {
-        console.log('......',data)
         axios.post(url,data)
         .then(function (response) {
           if(response.data){
-            console.log('data in action',response.data,url)
-            // dispatch(actionTypes.addOtp(data))
+            console.log('data in action',response.data)
+            dispatch(actionTypes.addOtp(response.data))
             success('added sucessfully')
             // history.push('/welcome')
 

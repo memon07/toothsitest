@@ -6,18 +6,15 @@ exports.check = (req, res) => {
 
     try {
         let otp = data.otp
-        console.log('hiii',data ,'+',otp)
-            // usersRef.doc(userRef.id).get().then((user) => {
-                // console.log(user)
-                // if (user.exists) {
-                //     console.log("User Saved with ID: ", userRef.id);
-                //     res.json(user.data());
-                // } else {
-                //     res.status(404).send({
-                //         message: "User not found with Id: " + req.params.uid
-                //     });
-                // }
-            // })
+        let currentDay = moment().format('E')
+        let currentHour = moment().format('HH')
+        let checkOTP = 0 + currentDay + currentHour
+        console.log(otp,'-----',checkOTP)
+            if(checkOTP === otp) {
+                return res.json('true')
+            }
+            res.json('false')
+            
         }
         catch (error) {
             console.error("Error : ", error);

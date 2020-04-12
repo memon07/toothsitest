@@ -24,7 +24,6 @@ class OtpForm extends Component {
             'phonenumber' : phoneNumber,
             'otp' : values.otp
         }
-        console.log(data)
         const { addOtp } = this.props;
         let url = 'http://localhost:8000/api/otp'
         addOtp(url,data);

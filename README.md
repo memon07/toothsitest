@@ -1,5 +1,33 @@
 
-### toothsi
+## toothsi
+
+```
+Project has the following routes
+
+routes
+---------
+/  - login page 
+/otp - otp page  ( otp will be current 4 digit day + hour in military 
+                   eg: 0111 (monday , 11am) )
+/welcome - no session page [ Route protected - through opt ]
+/season1 - session 1 page [ Route protected - through opt ]
+/season2 - session 2 page [ Route protected - through opt ]
+/allseason - all session page [ Route protected - through opt ]
+
+
+redux store + persist
+------------------------
+doctor
+patient
+otp
+
+
+backend route
+---------------
+POST : 'http://localhost:8000/api/otp'
+
+
+```
 
 
 #### Front end
